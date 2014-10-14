@@ -17,7 +17,11 @@ public class ThreadPoolApp
             
             Job[] jobs = new Job[numberOfJobs];
             for (int i=0; i<numberOfJobs; i++) {
-                jobs[i] = new Job(i);
+                jobs[i] = new Job(i) {
+                    public void run() {
+                        System.out.println("Hello.");
+                    } 
+                };
                 pool.execute(jobs[i]); // executes the given command at some future time.
             }
             pool.shutdown(); // Shutdown: previously submitted tasks are executed,
