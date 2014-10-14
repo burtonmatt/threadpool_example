@@ -2,6 +2,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 public class ThreadPoolApp
 {
+    /** 
+     * Main method that creates and maintains a pool of threads.
+     */
     public static void main(String[] args) {
         if (args.length < 2) 
             ThreadPoolApp.error();
@@ -24,7 +27,9 @@ public class ThreadPoolApp
             ThreadPoolApp.error();
         }
     }
-    
+    /**
+     * Method that outputs a message detailing the nature of the error that occured.
+     */
     private static void error() {
         System.out.println("ThreadPoolApp must be run with two positive values" +
             " integer arguments. The first detailing the number of jobs" +
